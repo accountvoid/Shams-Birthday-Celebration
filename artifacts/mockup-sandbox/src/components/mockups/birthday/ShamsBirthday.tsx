@@ -16,8 +16,10 @@ const BIRTHDAY = {
   utcOffsetMinutes: 180,
 } as const;
 
-const imageSrc = "/__mockup/images/shams-birthday.png";
-const documentSrc = "/__mockup/images/dragon-academy.pdf";
+// مسارات الموارد
+const imageSrc = "/images/shams-birthday.png";
+const documentSrc =
+  "https://github.com/accountvoid/Shams-Birthday-Celebration/releases/download/%D8%B4%D9%85%D8%B3/Dragon.Academy.pdf";
 
 type Phase = "countdown" | "welcome" | "letter" | "note" | "gift" | "final";
 
@@ -35,7 +37,7 @@ function birthdayTimestamp(year: number): number {
     BIRTHDAY.day,
     BIRTHDAY.hour,
     BIRTHDAY.minute,
-    BIRTHDAY.second,
+    BIRTHDAY.second
   );
   return localAsUtc - BIRTHDAY.utcOffsetMinutes * 60 * 1000;
 }
@@ -67,7 +69,9 @@ function arabicNumber(value: number): string {
 }
 
 function Countdown({ target }: { target: number }) {
-  const [remaining, setRemaining] = useState(() => getRemaining(target, Date.now()));
+  const [remaining, setRemaining] = useState(() =>
+    getRemaining(target, Date.now())
+  );
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -83,7 +87,7 @@ function Countdown({ target }: { target: number }) {
       { label: "الدقائق", value: remaining.minutes },
       { label: "الثواني", value: remaining.seconds },
     ],
-    [remaining],
+    [remaining]
   );
 
   return (
@@ -120,7 +124,9 @@ function Progress({ phase }: { phase: Phase }) {
 }
 
 export function ShamsBirthday() {
-  const [phase, setPhase] = useState<Phase>(() => getInitialPhase(new Date()));
+  const [phase, setPhase] = useState<Phase>(() =>
+    getInitialPhase(new Date())
+  );
   const [giftOpen, setGiftOpen] = useState(false);
   const now = new Date();
   const target = currentBirthdayTarget(now);
@@ -155,14 +161,18 @@ export function ShamsBirthday() {
                 هناك شيء صغير ينتظر منتصف الليل، حين تفتح السماء صفحة جديدة لكِ.
               </p>
               <Countdown target={target} />
-              <p className="shams-birthday__signature">١٢ سبتمبر · منتصف الليل · بغداد</p>
+              <p className="shams-birthday__signature">
+                ١٢ سبتمبر · منتصف الليل · بغداد
+              </p>
             </>
           )}
 
           {phase === "welcome" && (
             <>
               <p className="shams-birthday__eyebrow">لحظتكِ وصلت</p>
-              <h1 className="shams-birthday__title">كل عام وأنتِ بخير يا شمس ❤️</h1>
+              <h1 className="shams-birthday__title">
+                كل عام وأنتِ بخير يا شمس ❤️
+              </h1>
               <p className="shams-birthday__subtitle">
                 في يومكِ، كل ما تمنّيته لكِ صار أقرب إلى الضوء.
               </p>
@@ -183,14 +193,15 @@ export function ShamsBirthday() {
               <article className="shams-birthday__letter">
                 <p>يا شمس،</p>
                 <p>
-                  كل عام وأنتِ بخير، وأقرب إلى كل الأشياء التي تشبه قلبكِ. وجودكِ يجعل
-                  الأيام أحنّ، ويترك في أبسط اللحظات معنى لا يُنسى.
+                  كل عام وأنتِ بخير، وأقرب إلى كل الأشياء التي تشبه قلبكِ.
+                  وجودكِ يجعل الأيام أحنّ، ويترك في أبسط اللحظات معنى لا يُنسى.
                 </p>
                 <p>
-                  أتمنى أن يفتح لكِ عامكِ الجديد أبوابًا واسعة للفرح، وأن تظلي دائمًا
-                  كما أنتِ: جميلة الروح، فضولية، وقادرة على تحويل الحكايات إلى حياة.
+                  أتمنى أن يفتح لكِ عامكِ الجديد أبوابًا واسعة للفرح، وأن تظلي
+                  دائمًا كما أنتِ: جميلة الروح، فضولية، وقادرة على تحويل الحكايات
+                  إلى حياة.
                 </p>
-                <p>بكل محبة، عبد المؤمن</p>
+                <p>بكل محبة، براء</p>
               </article>
               <button
                 className="shams-birthday__button shams-birthday__button--quiet"
@@ -231,9 +242,20 @@ export function ShamsBirthday() {
               {!giftOpen ? (
                 <div className="shams-birthday__gift-stage">
                   <div className="shams-birthday__gift-wrap">
-                    <div className="shams-birthday__gift-halo" aria-hidden="true" />
-                    <div className="shams-birthday__sparkles" aria-hidden="true">
-                      <i /><i /><i /><i /><i /><i />
+                    <div
+                      className="shams-birthday__gift-halo"
+                      aria-hidden="true"
+                    />
+                    <div
+                      className="shams-birthday__sparkles"
+                      aria-hidden="true"
+                    >
+                      <i />
+                      <i />
+                      <i />
+                      <i />
+                      <i />
+                      <i />
                     </div>
                     <button
                       aria-label="افتحي الهدية"
@@ -244,13 +266,23 @@ export function ShamsBirthday() {
                       <span aria-hidden="true">🎁</span>
                     </button>
                   </div>
-                  <p className="shams-birthday__gift-instruction">اضغطي على الهدية لتفتحيها</p>
+                  <p className="shams-birthday__gift-instruction">
+                    اضغطي على الهدية لتفتحيها
+                  </p>
                 </div>
               ) : (
                 <>
                   <div className="shams-birthday__gift-stage is-open">
-                    <div className="shams-birthday__sparkles" aria-hidden="true">
-                      <i /><i /><i /><i /><i /><i />
+                    <div
+                      className="shams-birthday__sparkles"
+                      aria-hidden="true"
+                    >
+                      <i />
+                      <i />
+                      <i />
+                      <i />
+                      <i />
+                      <i />
                     </div>
                   </div>
                   <div className="shams-birthday__reveal">
@@ -263,10 +295,11 @@ export function ShamsBirthday() {
                       <a
                         className="shams-birthday__button"
                         href={documentSrc}
-                        rel="noreferrer"
+                        download="Dragon.Academy.pdf"
                         target="_blank"
+                        rel="noreferrer"
                       >
-                        افتحي أكاديمية التنانين
+                        تحميل أكاديمية التنانين 📥
                       </a>
                       <button
                         className="shams-birthday__button shams-birthday__button--quiet"
@@ -276,12 +309,6 @@ export function ShamsBirthday() {
                         أكملي للنهاية
                       </button>
                     </div>
-                    <span className="shams-birthday__pdf-label">معاينة الهدية داخل الصفحة</span>
-                    <iframe
-                      className="shams-birthday__pdf"
-                      src={`${documentSrc}#page=1`}
-                      title="معاينة أكاديمية التنانين"
-                    />
                   </div>
                 </>
               )}
@@ -290,13 +317,17 @@ export function ShamsBirthday() {
 
           {phase === "final" && (
             <>
-              <div className="shams-birthday__final-mark" aria-hidden="true">♡</div>
+              <div className="shams-birthday__final-mark" aria-hidden="true">
+                ♡
+              </div>
               <p className="shams-birthday__eyebrow">من قلبي</p>
-              <h1 className="shams-birthday__title">كل عام وأنتِ بخير يا شمس ❤️</h1>
+              <h1 className="shams-birthday__title">
+                كل عام وأنتِ بخير يا شمس ❤️
+              </h1>
               <p className="shams-birthday__final-copy">
                 أتمنى أن تكون هذه الهدية البسيطة قد أسعدتكِ.
               </p>
-              <p className="shams-birthday__final-signature">— عبد المؤمن</p>
+              <p className="shams-birthday__final-signature">— براء</p>
             </>
           )}
         </div>
