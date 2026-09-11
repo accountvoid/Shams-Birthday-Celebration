@@ -147,7 +147,7 @@ export function ShamsBirthday() {
 
           {phase === "countdown" && (
             <>
-              <p className="shams-birthday__eyebrow">إلى شمس، من عبد المؤمن</p>
+              <p className="shams-birthday__eyebrow">إلى شمس، من براء</p>
               <h1 className="shams-birthday__title">
                 بقي القليل على يومكِ <em>يا شمس...</em>
               </h1>
