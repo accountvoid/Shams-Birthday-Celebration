@@ -17,7 +17,7 @@ const BIRTHDAY = {
 } as const;
 
 // مسارات الموارد
-const imageSrc = "/images/shams-birthday.png";
+const imageSrc = "./images/shams-birthday.png";
 const documentSrc =
   "https://github.com/accountvoid/Shams-Birthday-Celebration/releases/download/%D8%B4%D9%85%D8%B3/Dragon.Academy.pdf";
 
