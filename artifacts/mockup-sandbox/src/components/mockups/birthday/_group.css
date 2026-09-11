@@ -1,0 +1,563 @@
+@import url("https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=Tajawal:wght@400;500;700;800&display=swap");
+
+.shams-birthday {
+  --night: #09081e;
+  --night-soft: #12102f;
+  --plum: #251535;
+  --plum-light: #3a1f4a;
+  --gold: #f0ca78;
+  --gold-pale: #ffe8ab;
+  --pink: #f4a4c9;
+  --pink-soft: #f9cfe0;
+  --ink: #fff5e5;
+  min-height: 100dvh;
+  overflow: hidden;
+  direction: rtl;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 75% 18%, rgba(126, 75, 143, .22), transparent 28rem),
+    radial-gradient(circle at 18% 75%, rgba(224, 98, 145, .12), transparent 24rem),
+    var(--night);
+  font-family: "Tajawal", system-ui, sans-serif;
+}
+
+.shams-birthday *,
+.shams-birthday *::before,
+.shams-birthday *::after {
+  box-sizing: border-box;
+}
+
+.shams-birthday button,
+.shams-birthday a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.shams-birthday button {
+  font: inherit;
+}
+
+.shams-birthday__shell {
+  isolation: isolate;
+  position: relative;
+  display: flex;
+  min-height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+}
+
+.shams-birthday__aurora {
+  position: absolute;
+  z-index: -2;
+  width: min(78vw, 48rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(180, 75, 144, .2), transparent 67%);
+  filter: blur(34px);
+  pointer-events: none;
+  transform: translate(18%, -27%);
+}
+
+.shams-birthday__grain {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  opacity: .06;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+.shams-birthday__stars,
+.shams-birthday__stars::before,
+.shams-birthday__stars::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+}
+
+.shams-birthday__stars {
+  z-index: -1;
+  opacity: .85;
+  background-image:
+    radial-gradient(circle at 12% 24%, rgba(255, 230, 165, .9) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 76% 18%, rgba(255, 255, 255, .8) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 32% 65%, rgba(244, 164, 201, .8) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 88% 72%, rgba(255, 255, 255, .76) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 57% 44%, rgba(240, 202, 120, .62) 0 1px, transparent 1.6px);
+  background-size: 210px 210px, 290px 290px, 340px 340px, 270px 270px, 190px 190px;
+  animation: shams-drift 16s linear infinite;
+}
+
+.shams-birthday__stars::before {
+  opacity: .55;
+  background-image:
+    radial-gradient(circle at 8% 80%, #fff0bc 0 1px, transparent 2px),
+    radial-gradient(circle at 44% 12%, #eeb4e0 0 1px, transparent 2px),
+    radial-gradient(circle at 68% 81%, #fff4cf 0 1px, transparent 2px);
+  background-size: 390px 390px, 280px 280px, 430px 430px;
+  animation: shams-drift 22s linear infinite reverse;
+}
+
+.shams-birthday__card {
+  position: relative;
+  width: min(100%, 62rem);
+  min-height: min(48rem, calc(100dvh - 5rem));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid rgba(240, 202, 120, .22);
+  border-radius: 2rem;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.035), transparent 42%),
+    rgba(18, 16, 47, .7);
+  box-shadow: 0 2rem 7rem rgba(2, 2, 15, .38), inset 0 1px rgba(255, 236, 185, .1);
+  text-align: center;
+}
+
+.shams-birthday__card::before,
+.shams-birthday__card::after {
+  position: absolute;
+  width: 15rem;
+  aspect-ratio: 1;
+  border: 1px solid rgba(240, 202, 120, .2);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.shams-birthday__card::before {
+  top: -11rem;
+  right: -6rem;
+}
+
+.shams-birthday__card::after {
+  bottom: -11rem;
+  left: -6rem;
+}
+
+.shams-birthday__eyebrow {
+  margin: 0 0 1.25rem;
+  color: var(--gold);
+  font-size: .73rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+
+.shams-birthday__eyebrow::before,
+.shams-birthday__eyebrow::after {
+  display: inline-block;
+  width: 1.9rem;
+  height: 1px;
+  margin: 0 .7rem;
+  vertical-align: middle;
+  background: rgba(240, 202, 120, .5);
+  content: "";
+}
+
+.shams-birthday__title {
+  max-width: 38rem;
+  margin: 0;
+  color: var(--ink);
+  font-family: "Amiri", Georgia, serif;
+  font-size: clamp(2.25rem, 7vw, 5.8rem);
+  font-weight: 400;
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.shams-birthday__title em {
+  color: var(--pink);
+  font-style: normal;
+}
+
+.shams-birthday__subtitle {
+  max-width: 31rem;
+  margin: 1.4rem auto 0;
+  color: rgba(255, 245, 229, .68);
+  font-size: clamp(.98rem, 1.9vw, 1.15rem);
+  line-height: 1.9;
+}
+
+.shams-birthday__countdown {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(4.1rem, 6.7rem));
+  gap: clamp(.45rem, 2vw, 1rem);
+  margin: 2.7rem 0 2.4rem;
+  direction: rtl;
+}
+
+.shams-birthday__time {
+  padding: 1rem .7rem .85rem;
+  border: 1px solid rgba(240, 202, 120, .2);
+  border-radius: 1rem;
+  background: rgba(8, 8, 30, .45);
+}
+
+.shams-birthday__time strong {
+  display: block;
+  color: var(--gold-pale);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-weight: 600;
+  line-height: 1;
+}
+
+.shams-birthday__time span {
+  display: block;
+  margin-top: .5rem;
+  color: rgba(255, 245, 229, .56);
+  font-size: .72rem;
+}
+
+.shams-birthday__button {
+  min-height: 3.25rem;
+  padding: .8rem 1.6rem;
+  border: 1px solid rgba(240, 202, 120, .65);
+  border-radius: 999px;
+  color: var(--night);
+  background: linear-gradient(135deg, var(--gold-pale), var(--gold));
+  box-shadow: 0 .7rem 2rem rgba(240, 202, 120, .13);
+  cursor: pointer;
+  font-weight: 800;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.shams-birthday__button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2.5rem rgba(240, 202, 120, .22);
+}
+
+.shams-birthday__button:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
+}
+
+.shams-birthday__button--quiet {
+  border-color: rgba(244, 164, 201, .45);
+  color: var(--pink-soft);
+  background: rgba(244, 164, 201, .08);
+  box-shadow: none;
+}
+
+.shams-birthday__signature {
+  margin-top: 2rem;
+  color: rgba(255, 245, 229, .45);
+  font-size: .8rem;
+}
+
+.shams-birthday__progress {
+  position: absolute;
+  top: 1.4rem;
+  right: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: .4rem;
+}
+
+.shams-birthday__progress i {
+  width: 1.9rem;
+  height: 2px;
+  background: rgba(255, 245, 229, .16);
+  transition: background .4s ease, transform .4s ease;
+}
+
+.shams-birthday__progress i.is-active {
+  background: var(--gold);
+  transform: scaleX(1.08);
+}
+
+.shams-birthday__letter {
+  width: min(100%, 39rem);
+  margin: 1.3rem auto 2.1rem;
+  padding: clamp(1.35rem, 4vw, 2.2rem);
+  border: 1px solid rgba(240, 202, 120, .22);
+  border-radius: 1rem;
+  background: rgba(9, 8, 30, .45);
+  box-shadow: inset 0 1px rgba(255,255,255,.04);
+  text-align: right;
+}
+
+.shams-birthday__letter p {
+  margin: 0 0 1rem;
+  color: rgba(255, 245, 229, .85);
+  font-family: "Amiri", Georgia, serif;
+  font-size: clamp(1.08rem, 2.4vw, 1.35rem);
+  line-height: 2;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: shams-reveal .8s ease forwards;
+}
+
+.shams-birthday__letter p:nth-child(2) { animation-delay: .2s; }
+.shams-birthday__letter p:nth-child(3) { animation-delay: .4s; }
+.shams-birthday__letter p:nth-child(4) { animation-delay: .6s; }
+.shams-birthday__letter p:last-child {
+  margin-bottom: 0;
+  color: var(--pink-soft);
+}
+
+.shams-birthday__note {
+  width: min(100%, 35rem);
+  padding: 2.2rem clamp(1.4rem, 5vw, 3.2rem);
+  border: 1px solid rgba(244, 164, 201, .36);
+  border-radius: 1rem 3rem 1rem 3rem;
+  background: linear-gradient(135deg, rgba(244, 164, 201, .14), rgba(240, 202, 120, .06));
+  box-shadow: 1rem 1.3rem 0 rgba(244, 164, 201, .035);
+}
+
+.shams-birthday__note p {
+  margin: 0;
+  color: var(--pink-soft);
+  font-family: "Amiri", Georgia, serif;
+  font-size: clamp(1.3rem, 3.4vw, 2rem);
+  line-height: 1.9;
+}
+
+.shams-birthday__gift-wrap {
+  position: relative;
+  display: grid;
+  width: min(14rem, 55vw);
+  aspect-ratio: 1;
+  place-items: center;
+  margin: 1.5rem auto 2rem;
+}
+
+.shams-birthday__gift-halo {
+  position: absolute;
+  inset: 4%;
+  border: 1px solid rgba(240, 202, 120, .4);
+  border-radius: 50%;
+  box-shadow: 0 0 3rem rgba(240, 202, 120, .16), inset 0 0 2.5rem rgba(244, 164, 201, .08);
+}
+
+.shams-birthday__gift {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 7.1rem;
+  height: 6.2rem;
+  place-items: center;
+  border: 1px solid var(--gold);
+  border-radius: .5rem;
+  color: var(--gold-pale);
+  background: linear-gradient(135deg, #5d244e, #2d1641);
+  box-shadow: .5rem .8rem 0 rgba(8, 7, 24, .35), 0 0 2.5rem rgba(244, 164, 201, .2);
+  cursor: pointer;
+  transition: transform .55s cubic-bezier(.22, .8, .24, 1), box-shadow .55s ease;
+}
+
+.shams-birthday__gift::before,
+.shams-birthday__gift::after {
+  position: absolute;
+  content: "";
+  background: var(--gold);
+}
+
+.shams-birthday__gift::before {
+  width: 1.05rem;
+  height: 100%;
+}
+
+.shams-birthday__gift::after {
+  top: 1.35rem;
+  width: 100%;
+  height: 1px;
+}
+
+.shams-birthday__gift span {
+  position: relative;
+  z-index: 1;
+  font-size: 2.4rem;
+}
+
+.shams-birthday__gift:hover {
+  transform: translateY(-7px) rotate(-2deg);
+  box-shadow: .5rem 1.1rem 0 rgba(8, 7, 24, .35), 0 0 3.5rem rgba(244, 164, 201, .3);
+}
+
+.shams-birthday__gift.is-open {
+  transform: translateY(3rem) scale(.76);
+  opacity: 0;
+}
+
+.shams-birthday__gift-instruction {
+  margin: 0;
+  color: rgba(255, 245, 229, .57);
+  font-size: .9rem;
+}
+
+.shams-birthday__sparkles {
+  position: absolute;
+  inset: -15%;
+  pointer-events: none;
+}
+
+.shams-birthday__sparkles i {
+  position: absolute;
+  width: .35rem;
+  height: .35rem;
+  border-radius: 50%;
+  background: var(--gold-pale);
+  opacity: 0;
+}
+
+.shams-birthday__sparkles i:nth-child(1) { top: 17%; right: 16%; }
+.shams-birthday__sparkles i:nth-child(2) { top: 21%; left: 18%; animation-delay: .08s; }
+.shams-birthday__sparkles i:nth-child(3) { bottom: 19%; right: 25%; animation-delay: .16s; }
+.shams-birthday__sparkles i:nth-child(4) { bottom: 24%; left: 13%; animation-delay: .24s; }
+.shams-birthday__sparkles i:nth-child(5) { top: 46%; left: 4%; animation-delay: .32s; }
+.shams-birthday__sparkles i:nth-child(6) { top: 44%; right: 3%; animation-delay: .4s; }
+
+.shams-birthday__gift-stage.is-open .shams-birthday__sparkles i {
+  animation: shams-sparkle 1.15s ease-out forwards;
+}
+
+.shams-birthday__reveal {
+  width: min(100%, 49rem);
+  margin: 1.2rem 0 1.1rem;
+  animation: shams-rise .7s ease both;
+}
+
+.shams-birthday__image {
+  display: block;
+  width: 100%;
+  max-height: 18rem;
+  border: 1px solid rgba(240, 202, 120, .4);
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center 58%;
+  box-shadow: 0 1rem 3.5rem rgba(2, 1, 17, .36);
+}
+
+.shams-birthday__gift-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .7rem;
+  margin-top: 1rem;
+}
+
+.shams-birthday__pdf {
+  width: min(100%, 49rem);
+  height: 17rem;
+  margin: 1rem 0 0;
+  border: 1px solid rgba(240, 202, 120, .33);
+  border-radius: .8rem;
+  background: #f7ecd9;
+}
+
+.shams-birthday__pdf-label {
+  display: block;
+  margin: .9rem 0 0;
+  color: rgba(255, 245, 229, .6);
+  font-size: .78rem;
+}
+
+.shams-birthday__final-mark {
+  display: grid;
+  width: 5rem;
+  height: 5rem;
+  place-items: center;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(244, 164, 201, .42);
+  border-radius: 50%;
+  color: var(--pink);
+  font-size: 2rem;
+  box-shadow: 0 0 2.5rem rgba(244, 164, 201, .14);
+}
+
+.shams-birthday__final-copy {
+  margin: 1.2rem 0 0;
+  color: rgba(255, 245, 229, .7);
+  font-family: "Amiri", Georgia, serif;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  line-height: 1.8;
+}
+
+.shams-birthday__final-signature {
+  margin: 2rem 0 0;
+  color: var(--gold);
+  font-family: "Amiri", Georgia, serif;
+  font-size: 1.3rem;
+}
+
+@keyframes shams-drift {
+  to { transform: translate3d(-16px, 11px, 0); }
+}
+
+@keyframes shams-reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shams-rise {
+  from { opacity: 0; transform: translateY(14px) scale(.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes shams-sparkle {
+  0% { opacity: 0; transform: translate(0, 0) scale(.3); }
+  20% { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--spark-x, 0), -3rem) scale(1.7); }
+}
+
+@media (max-width: 560px) {
+  .shams-birthday__shell {
+    align-items: stretch;
+    padding: .75rem;
+  }
+
+  .shams-birthday__card {
+    min-height: calc(100dvh - 1.5rem);
+    padding: 3.4rem 1rem 2rem;
+    border-radius: 1.35rem;
+  }
+
+  .shams-birthday__eyebrow::before,
+  .shams-birthday__eyebrow::after {
+    width: 1rem;
+    margin-inline: .35rem;
+  }
+
+  .shams-birthday__countdown {
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: .35rem;
+    margin-top: 2rem;
+  }
+
+  .shams-birthday__time {
+    padding-inline: .2rem;
+  }
+
+  .shams-birthday__time strong {
+    font-size: clamp(1.5rem, 9vw, 2.2rem);
+  }
+
+  .shams-birthday__time span {
+    font-size: .63rem;
+  }
+
+  .shams-birthday__title {
+    font-size: clamp(2.2rem, 12vw, 4rem);
+  }
+
+  .shams-birthday__pdf {
+    height: 12rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shams-birthday *,
+  .shams-birthday *::before,
+  .shams-birthday *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}

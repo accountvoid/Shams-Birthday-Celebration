@@ -1,0 +1,231 @@
+Create a beautiful, emotional, interactive birthday website dedicated to a girl named "Shams" (شمس).
+
+IMPORTANT:
+- The entire website must be in Arabic.
+- The birthday date is September 12 (12/9).
+- Use Iraq local time (Asia/Baghdad, UTC+3).
+- The experience should feel like a personal handmade digital gift from "Abdul Momen" to Shams, NOT like a generic AI-generated website.
+- Keep the design elegant, magical, emotional, simple, and meaningful.
+- Do not make it overly complicated or crowded.
+
+## 1. BEFORE MIDNIGHT — COUNTDOWN
+
+When Shams opens the website before September 12 at 12:00 AM Iraq time, show a beautiful dark night scene.
+
+Background:
+- Deep dark blue / black space.
+- Many beautiful small stars.
+- Subtle glowing particles.
+- Soft magical atmosphere.
+- Very smooth animations.
+- No distracting elements.
+
+At the center, show a beautiful glowing sun/moon-like celestial object representing "Shams", with a warm golden glow surrounded by subtle light particles.
+
+Show a live countdown until September 12 at exactly 12:00 AM Iraq time.
+
+The countdown should display:
+- الأيام
+- الساعات
+- الدقائق
+- الثواني
+
+The countdown must update in real time using Iraq time.
+
+Above or below the countdown, display an elegant Arabic message such as:
+
+"بقي القليل على يومكِ يا شمس..."
+
+The design should create a feeling of anticipation and mystery.
+
+## 2. MIDNIGHT TRANSITION
+
+When the countdown reaches exactly September 12 at 12:00 AM Iraq time:
+
+- The countdown disappears smoothly.
+- The screen becomes brighter.
+- The stars become more visible and start gently moving.
+- The central glowing celestial object becomes brighter.
+- Add a beautiful magical light animation.
+- Add subtle glowing particles around the screen.
+
+Then reveal the main birthday message:
+
+"كل عام وأنتِ بخير يا شمس ❤️"
+
+Make this moment feel special and emotional, like the website has been waiting for her birthday.
+
+Do NOT automatically reveal everything at once.
+
+## 3. INTERACTIVE BUTTON
+
+After the midnight animation finishes, show a beautiful glowing button.
+
+Button text:
+
+"اضغطي هنا ✨"
+
+The button should have a subtle glowing animation.
+
+When Shams clicks it, continue the experience.
+
+## 4. FIRST MESSAGE — FROM ABDUL MOMEN
+
+After clicking the button, show a beautiful animated letter/card.
+
+The card should look like a personal handwritten birthday message.
+
+Title:
+
+"إلى شمس ❤️"
+
+Message:
+
+"كل عام وأنتِ بخير يا شمس.
+أتمنى أن يكون عامكِ الجديد أجمل من كل عام مضى، وأن يحمل لكِ الكثير من اللحظات الجميلة والسعيدة.
+أردت أن أقدم لكِ شيئًا بسيطًا، ليس لقيمته المادية، وإنما لأنني أردت أن يكون هناك شيء صغير يذكّركِ بهذا اليوم.
+أتمنى أن تبقى هذه الهدية ذكرى جميلة لكِ، وأن تبتسمي كلما تذكرتِها.
+عيد ميلاد سعيد يا شمس، وأتمنى لكِ أيامًا جميلة تليق بكِ. ❤️
+
+— عبد المؤمن"
+
+The message should appear with a smooth typing/fade animation.
+
+## 5. SECOND MESSAGE / PERSONAL NOTE
+
+After the first message, allow Shams to continue to the next card.
+
+Use a card-flipping or page-turning animation.
+
+Show another short personal note:
+
+"كل عام وأنتِ بخير يا شمس ❤️
+هذه ليست هدية كبيرة، لكنها صُنعت لكِ بمحبة واهتمام.
+أتمنى أن تحمل لكِ هذه الهدية ذكرى جميلة، وأن تجعلكِ تبتسمين ولو للحظة."
+
+Make the card feel physical and elegant, like turning a small birthday card.
+
+## 6. THE GIFT
+
+After the messages, show a beautiful final gift box in the center of the screen.
+
+Text above it:
+
+"وهذه هديتكِ يا شمس 🎁"
+
+The gift should be visually simple but elegant.
+
+When Shams clicks the gift:
+
+- Play a soft opening animation.
+- The gift box opens.
+- Magical particles/light appear.
+- Reveal the attached gift file provided with this project.
+- The attached file must be integrated into the website as the actual gift.
+- Do NOT replace it with a fake placeholder.
+- If the attached file is an image, display it beautifully.
+- If it is a PDF or another document, provide an elegant in-page preview/opening experience.
+
+Also show the attached birthday image beautifully as part of the final gift experience if available.
+
+## 7. FINAL SCREEN
+
+After opening the gift, show a beautiful final screen.
+
+Main text:
+
+"كل عام وأنتِ بخير يا شمس ❤️"
+
+Secondary text:
+
+"أتمنى أن تكون هذه الهدية البسيطة قد أسعدتكِ."
+
+And at the bottom:
+
+"— عبد المؤمن"
+
+The final screen should have:
+- Beautiful stars in the background.
+- Soft glowing particles.
+- Warm golden/pink/purple lighting.
+- Subtle animations.
+- Elegant Arabic typography.
+- A calm emotional atmosphere.
+
+## VISUAL STYLE
+
+The overall visual identity should be:
+
+- Magical
+- Romantic but tasteful
+- Elegant
+- Emotional
+- Personal
+- Cinematic
+- Minimal but beautiful
+
+Color palette:
+- Deep navy / black background
+- Gold / warm yellow light
+- Soft pink accents
+- Purple highlights
+- White Arabic text
+
+Use glassmorphism only subtly.
+Do not overload the interface with cards, buttons, or unnecessary UI.
+
+## ANIMATIONS
+
+Use smooth, high-quality animations throughout:
+
+- Star twinkling
+- Floating particles
+- Soft glowing effects
+- Countdown transitions
+- Fade-in / fade-out
+- Typing effect for messages
+- Card/page flip
+- Gift box opening
+- Light burst when the gift opens
+
+Animations must be smooth and lightweight, especially on mobile.
+
+## MOBILE FIRST
+
+The website must be designed primarily for mobile phones.
+
+Requirements:
+- Fully responsive.
+- Arabic RTL layout.
+- Large readable Arabic text.
+- Touch-friendly buttons.
+- No horizontal scrolling.
+- Fast loading.
+- Animations should not cause lag.
+- The experience should look beautiful on a phone screen.
+
+## IMPORTANT TECHNICAL REQUIREMENTS
+
+- Use real Iraq time (Asia/Baghdad, UTC+3) for the countdown.
+- The countdown must automatically detect whether the birthday has started.
+- Before September 12 at 12:00 AM Iraq time → show countdown.
+- At/after September 12 at 12:00 AM Iraq time → show the birthday experience.
+- Do not rely only on the user's device clock if a reliable timezone conversion can be used.
+- Store the birthday date clearly in the code so it can be easily changed later.
+- Make the experience work without requiring login or registration.
+- Do not add ads.
+- Do not add unnecessary navigation.
+- The website should feel like one continuous interactive birthday experience.
+
+## MOST IMPORTANT
+
+This is a personal digital birthday gift from Abdul Momen to Shams.
+
+The final result should NOT feel like a commercial landing page.
+
+It should feel like:
+"Someone created this small website specifically for me."
+
+Prioritize emotion, simplicity, elegance, personalization, and the feeling of opening a surprise gift step by step.
+
+Use Arabic throughout the entire user interface and experience.
