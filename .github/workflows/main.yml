@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -13,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: github-pages
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -22,8 +21,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v6
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -32,7 +31,7 @@ jobs:
           run_install: false
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: pnpm
@@ -42,29 +41,27 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build website
-        working-directory: artifacts/mockup-sandbox
+        run: pnpm build
         env:
           PORT: 5173
           BASE_PATH: /Shams-Birthday-Celebration/
-        run: pnpm build
 
-      - name: Verify build output
-        working-directory: artifacts/mockup-sandbox
+      - name: Verify build
         run: |
-          if [ ! -f "dist/index.html" ]; then
-            echo "ERROR: dist/index.html was not generated."
+          if [ ! -f "artifacts/mockup-sandbox/dist/index.html" ]; then
+            echo "ERROR: Build output not found."
             exit 1
           fi
 
           echo "Build successful."
           echo "Generated files:"
-          find dist -maxdepth 2 -type f | sort
+          find artifacts/mockup-sandbox/dist -maxdepth 3 -type f | sort
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload website artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
         with:
           path: artifacts/mockup-sandbox/dist
 
