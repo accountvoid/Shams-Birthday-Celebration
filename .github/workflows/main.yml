@@ -1,9 +1,10 @@
-name: Deploy to GitHub Pages
+name: Deploy Shams Birthday to GitHub Pages
 
 on:
   push:
     branches:
       - main
+
   workflow_dispatch:
 
 permissions:
@@ -12,15 +13,16 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
   build:
+    name: Build website
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup pnpm
@@ -34,32 +36,48 @@ jobs:
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Build website
-        run: pnpm --dir artifacts/mockup-sandbox build
+        working-directory: artifacts/mockup-sandbox
         env:
           PORT: 5173
+          BASE_PATH: /Shams-Birthday-Celebration/
+        run: pnpm build
 
-      - name: Setup Pages
+      - name: Verify build output
+        working-directory: artifacts/mockup-sandbox
+        run: |
+          if [ ! -f "dist/index.html" ]; then
+            echo "ERROR: dist/index.html was not generated."
+            exit 1
+          fi
+
+          echo "Build successful."
+          echo "Generated files:"
+          find dist -maxdepth 2 -type f | sort
+
+      - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Pages artifact
+      - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: artifacts/mockup-sandbox/dist
 
   deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    runs-on: ubuntu-latest
-    needs: build
-
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
