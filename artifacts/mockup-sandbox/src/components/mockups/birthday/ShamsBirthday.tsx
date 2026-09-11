@@ -17,6 +17,7 @@ const BIRTHDAY = {
 } as const;
 
 // مسارات الموارد
+const introImageSrc = "./images/file_000000001a1482108bc2a1754e7b07b8.png";
 const imageSrc = "./images/shams-birthday.png";
 const documentSrc =
   "https://github.com/accountvoid/Shams-Birthday-Celebration/releases/download/%D8%B4%D9%85%D8%B3/Dragon.Academy.pdf";
@@ -173,6 +174,13 @@ export function ShamsBirthday() {
               <h1 className="shams-birthday__title">
                 كل عام وأنتِ بخير يا شمس ❤️
               </h1>
+              <div className="shams-birthday__reveal" style={{ marginBottom: "1.5rem" }}>
+                <img
+                  alt="صورة الترحيب"
+                  className="shams-birthday__image"
+                  src={introImageSrc}
+                />
+              </div>
               <p className="shams-birthday__subtitle">
                 في يومكِ، كل ما تمنّيته لكِ صار أقرب إلى الضوء.
               </p>
